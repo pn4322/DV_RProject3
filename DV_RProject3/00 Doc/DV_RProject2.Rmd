@@ -1,0 +1,44 @@
+---
+output:
+  html_document:
+    pandoc_args: [
+      "+RTS", "-K64m",
+      "-RTS"
+    ]
+---
+
+
+## Steps
+
+1. Set working directory and the file path to refer to the appropriate data set.
+
+2. Set column names from the data set to a continuous varaible measure or discrete variable dimension.
+
+3. After running the R code that creates the code for a SQLDeveloper table (shown below), create a TexasWeather1 and TexasWeather2 table in SQL Developer and import the data from the csv data set.
+
+```{r}
+source("../01 Data/R_ETL_1.R", echo = TRUE)
+```
+
+```{r}
+source("../01 Data/R_ETL_2.R", echo = TRUE)
+```
+
+
+##Key for Plots
+STATION - Station ID  
+STATION_NAME - Name of Station  
+ELEVATION - Elevation of station from sea level  
+DATE_ - Date and Timestamp of collected data  
+HLY_HIDX_NORMAL - Heat Index Average  
+HLY_WIND_AVGSPD - Average Windspeed  
+HLY_TEMP_NORMAL - Average Temperature  
+HLY_WCHL_NORMAL - Avverage Wind Chill  
+
+There are three plots for each data sets.  The first three are for TexasWeather1, the next three are for TexasWeather2, and the following three are for the combined data sets. 
+
+The plots are followed by the Summaries and Head of each.
+
+```{r}
+source("../02 Data Wrangling/Wrangling and Visualizations.R", echo = TRUE)
+```
